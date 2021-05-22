@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import PokeList from './components/PokeList/PokeList';
+import PokeDetail from './components/PokeDetail/PokeDetail';
+import { useEffect } from 'react';
+import { setCheckList } from './state/pokeAction';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ setCheckList }) {
+
+  useEffect(() => {
+    const bag = localStorage.getItem('bag') ? JSON.parse(localStorage.getItem('bag')) : [];
+    setCheckList([...bag.map(p => p.name)])
+    console.log([...bag.map(p => p.name)])
+  }, [])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Route path='/' exact component={ PokeList }></Route>
+        <Route path='/detail/:name' component={ PokeDetail }></Route>
+      </Router>
     </div>
   );
 }
 
-export default App;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setCheckList: (bag) => dispatch(setCheckList(bag)),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(App);

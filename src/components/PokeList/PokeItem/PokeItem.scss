@@ -1,0 +1,19 @@
+.poke-container {
+  text-align: center;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: rgb(48, 48, 48);
+
+  .img-container {
+    padding: 5px;
+    margin: 10px;
+    
+    img {
+      width: 180px;
+      height: 180px;
+      border: 1px solid lightgray;
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px lightgray;
+    }
+  }
+}
