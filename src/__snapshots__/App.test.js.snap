@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<PokeList.test /> render 1`] = `
+<div
+  className="App"
+>
+  <div
+    className="list-container"
+  >
+    <header
+      className="header-container"
+    >
+      <button
+        className="left-btn btn active"
+        onClick={[Function]}
+      >
+        All
+      </button>
+      <button
+        className="right-btn btn null"
+        onClick={[Function]}
+      >
+        Bag
+      </button>
+    </header>
+    <div
+      className="search-container"
+    >
+      <input
+        onKeyUp={[Function]}
+        placeholder="search pokemon..."
+        type="text"
+      />
+    </div>
+    <div
+      className="list-wrap"
+    />
+  </div>
+</div>
+`;

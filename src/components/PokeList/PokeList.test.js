@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
 
 import configureStore from 'redux-mock-store';
-import App from './App';
+import PokeList from './PokeList';
 
 const mockStore = configureStore([]);
 
@@ -19,7 +19,7 @@ describe('<PokeList.test />', () => {
  
     component = renderer.create(
       <Provider store={store}>
-        <App />
+        <PokeList />
       </Provider>
     );
   });

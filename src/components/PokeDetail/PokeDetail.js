@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import GoogleMapReact from 'google-map-react';
+import GoogleMapReact from 'react-google-maps';
 import { locations } from '../../assets/mock-location.json'
 
 import './PokeDetail.scss';
